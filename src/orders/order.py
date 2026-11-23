@@ -22,6 +22,14 @@ class Order:
         """Добавить услугу в заказ."""
         self.services.append(service)
 
+    def add_service(self, service):
+        """Добавить услугу в заказ."""
+        if self.status == Order.ISSUED:
+            raise ValueError(
+                "Нельзя добавить услугу: заказ уже выдан клиенту.")
+        self.services.append(service)
+
+
     def apply_discount(self, percent):
         """Применить накопительную скидку клиента."""
         if 0 < percent <= 50:
