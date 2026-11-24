@@ -1,0 +1,9 @@
+Client        (client_id PK, fio, phone UNIQUE, email)
+Service       (service_id PK, name, description, base_price, hours)
+Item          (item_id PK, kind, material, color, defects)
+Status        (status_id PK, name)
+Orders        (order_id PK, client_id FK→Client, item_id FK→Item,
+               status_id FK→Status, total_cost, accepted_date, due_date)
+OrderService  (order_id FK→Orders, service_id FK→Service, qty)
+Users         (user_id PK, fio, login UNIQUE, password_hash, role_id FK→Role)
+Role          (role_id PK, name)
