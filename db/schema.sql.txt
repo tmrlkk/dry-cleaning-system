@@ -1,4 +1,4 @@
-Client        (client_id PK, fio, phone UNIQUE, email)
+Client        (client_id PK, name, surname, phone, email)
 Service       (service_id PK, name, description, base_price, hours)
 Item          (item_id PK, kind, material, color, defects)
 Status        (status_id PK, name)
